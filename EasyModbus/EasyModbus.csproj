@@ -4,9 +4,15 @@
     <AssemblyName>EasyModbus</AssemblyName>
     <RootNamespace>EasyModbus</RootNamespace>
     <Version>5.6.0</Version>
-    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-    <ImplicitUsings>disable</ImplicitUsings>
-    <Nullable>disable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Description>Modbus TCP, UDP, and RTU client/server library for .NET 10.</Description>
+    <Company>Stefan Rossmann Engineering Solutions</Company>
+    <Copyright>Copyright (c) 2018-2020 Rossmann-Engineering</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/rjjong1/EasyModbusTCP.NET</RepositoryUrl>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Configurations>Debug;Release;Plugins</Configurations>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)' == 'Plugins'">
@@ -15,6 +21,7 @@
     <DebugSymbols>false</DebugSymbols>
   </PropertyGroup>
   <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/" />
     <PackageReference Include="System.IO.Ports" Version="10.0.11" />
   </ItemGroup>
 </Project>

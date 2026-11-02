@@ -14,9 +14,9 @@ public class ModbusLoopbackTests
     {
         var server = new ModbusServer { LocalIPAddress = IPAddress.Loopback, Port = GetFreeTcpPort() };
         var client = new ModbusClient("127.0.0.1", server.Port) { ConnectionTimeout = 2000 };
-        server.holdingRegisters[1] = 1234;
-        server.inputRegisters[1] = 5678;
-        server.discreteInputs[1] = true;
+        server.HoldingRegisters[1] = 1234;
+        server.InputRegisters[1] = 5678;
+        server.DiscreteInputs[1] = true;
         server.Listen();
 
         try
