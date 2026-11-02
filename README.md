@@ -1,5 +1,29 @@
 # EasyModbusTCP.NET - <a href="EasyModbusTCP.NET">www.EasyModbusTCP.NET</a>
 
+## .NET 10 fork
+
+Build the current library with the .NET 10 SDK:
+
+```powershell
+dotnet build EasyModbus/EasyModbus.csproj --configuration Release
+dotnet test EasyModbus.NET.slnx --configuration Release
+```
+
+`EasyModbus/EasyModbus.csproj` compiles the main library sources for `net10.0`,
+including the TCP, UDP, and RTU client/server APIs. It keeps the `EasyModbus`
+assembly and namespace and uses `System.IO.Ports` 10.0.11 for serial support.
+Server shutdown uses cooperative termination instead of the unsupported
+`Thread.Abort` API. The .NET 10 tests exercise TCP reads/writes, numeric and string
+conversions, TCP restart, and idle UDP shutdown on loopback. Serial hardware is
+not needed for these tests.
+
+Use `EasyModbus.NET.slnx` for modern development. `EasyModbus.sln` and the
+older .NET Framework, .NET 5, and .NET 6 projects remain available for historical
+examples. The repository's `Directory.Build.props` and `Directory.Build.targets`
+keep a consuming repository's build settings from changing the library.
+
+The following documentation and license are from the upstream library.
+
 Modbus TCP, Modbus UDP and Modbus RTU client/server library for .NET<br>
 Industry approved!!<br>
 Fast and secure access from PC or Embedded Systems to many PLC-Systems and other components for industry automation. <br>

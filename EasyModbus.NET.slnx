@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="EasyModbus/EasyModbus.csproj" />
+  <Folder Name="/Tests/">
+    <Project Path="Tests/EasyModbus.Tests/EasyModbus.Tests.csproj" />
+  </Folder>
+</Solution>

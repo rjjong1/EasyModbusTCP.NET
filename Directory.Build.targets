@@ -1,0 +1,3 @@
+<Project>
+  <!-- Do not inherit a consuming solution's versioning or deployment targets. -->
+</Project>
