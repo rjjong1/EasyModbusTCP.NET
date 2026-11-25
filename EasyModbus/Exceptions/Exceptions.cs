@@ -1,211 +1,188 @@
-﻿/*
+/*
 Copyright (c) 2018-2020 Rossmann-Engineering
-Permission is hereby granted, free of charge, 
+Permission is hereby granted, free of charge,
 to any person obtaining a copy of this software
 and associated documentation files (the "Software"),
-to deal in the Software without restriction, 
-including without limitation the rights to use, 
-copy, modify, merge, publish, distribute, sublicense, 
-and/or sell copies of the Software, and to permit 
-persons to whom the Software is furnished to do so, 
+to deal in the Software without restriction,
+including without limitation the rights to use,
+copy, modify, merge, publish, distribute, sublicense,
+and/or sell copies of the Software, and to permit
+persons to whom the Software is furnished to do so,
 subject to the following conditions:
 
-The above copyright notice and this permission 
+The above copyright notice and this permission
 notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
 EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, 
-DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, 
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE 
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM,
+DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
 OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 using System;
 using System.Runtime.Serialization;
 
-namespace EasyModbus.Exceptions
+namespace EasyModbus.Exceptions;
+
+/// <summary>
+/// Exception to be thrown if serial port is not opened
+/// </summary>
+public class SerialPortNotOpenedException : ModbusException
 {
-	/// <summary>
-	/// Exception to be thrown if serial port is not opened
-	/// </summary>
-	public class SerialPortNotOpenedException : ModbusException
-	{
-   		public SerialPortNotOpenedException()
-        	: base()
-    	{
-    	}
+    public SerialPortNotOpenedException() : base()
+    {
+    }
 
-    	public SerialPortNotOpenedException(string message)
-      	  : base(message)
-    	{
-    	}
+    public SerialPortNotOpenedException(string? message) : base(message)
+    {
+    }
 
-    	public SerialPortNotOpenedException(string message, Exception innerException)
-        	: base(message, innerException)
-    	{
-    	}
+    public SerialPortNotOpenedException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
 
-    	protected SerialPortNotOpenedException(SerializationInfo info, StreamingContext context)
-        	: base(info, context)
-   	 	{
-   	 	}
-	}
-	
-	/// <summary>
-	/// Exception to be thrown if Connection to Modbus device failed
-	/// </summary>
-	public class ConnectionException : ModbusException
-	{
-   		public ConnectionException()
-        	: base()
-    	{
-    	}
+    [Obsolete("Formatter-based exception serialization is obsolete.", DiagnosticId = "SYSLIB0051")]
+    protected SerialPortNotOpenedException(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
+}
 
-    	public ConnectionException(string message)
-      	  : base(message)
-    	{
-    	}
+/// <summary>
+/// Exception to be thrown if Connection to Modbus device failed
+/// </summary>
+public class ConnectionException : ModbusException
+{
+    public ConnectionException() : base()
+    {
+    }
 
-    	public ConnectionException(string message, Exception innerException)
-        	: base(message, innerException)
-    	{
-    	}
+    public ConnectionException(string? message) : base(message)
+    {
+    }
 
-    	protected ConnectionException(SerializationInfo info, StreamingContext context)
-        	: base(info, context)
-   	 	{
-   	 	}
-	}
-	
-	/// <summary>
-	/// Exception to be thrown if Modbus Server returns error code "Function code not supported"
-	/// </summary>
-	public class FunctionCodeNotSupportedException : ModbusException
-	{
-   		public FunctionCodeNotSupportedException()
-        	: base()
-    	{
-    	}
+    public ConnectionException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
 
-    	public FunctionCodeNotSupportedException(string message)
-      	  : base(message)
-    	{
-    	}
+    [Obsolete("Formatter-based exception serialization is obsolete.", DiagnosticId = "SYSLIB0051")]
+    protected ConnectionException(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
+}
 
-    	public FunctionCodeNotSupportedException(string message, Exception innerException)
-        	: base(message, innerException)
-    	{
-    	}
+/// <summary>
+/// Exception to be thrown if Modbus Server returns error code "Function code not supported"
+/// </summary>
+public class FunctionCodeNotSupportedException : ModbusException
+{
+    public FunctionCodeNotSupportedException() : base()
+    {
+    }
 
-    	protected FunctionCodeNotSupportedException(SerializationInfo info, StreamingContext context)
-        	: base(info, context)
-   	 	{
-   	 	}
-	}
-	
-	/// <summary>
-	/// Exception to be thrown if Modbus Server returns error code "quantity invalid"
-	/// </summary>
-	public class QuantityInvalidException : ModbusException
-	{
-   		public QuantityInvalidException()
-        	: base()
-    	{
-    	}
+    public FunctionCodeNotSupportedException(string? message) : base(message)
+    {
+    }
 
-    	public QuantityInvalidException(string message)
-      	  : base(message)
-    	{
-    	}
+    public FunctionCodeNotSupportedException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
 
-    	public QuantityInvalidException(string message, Exception innerException)
-        	: base(message, innerException)
-    	{
-    	}
+    [Obsolete("Formatter-based exception serialization is obsolete.", DiagnosticId = "SYSLIB0051")]
+    protected FunctionCodeNotSupportedException(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
+}
 
-    	protected QuantityInvalidException(SerializationInfo info, StreamingContext context)
-        	: base(info, context)
-   	 	{
-   	 	}
-	}
-	
-	/// <summary>
-	/// Exception to be thrown if Modbus Server returns error code "starting adddress and quantity invalid"
-	/// </summary>
-	public class StartingAddressInvalidException : ModbusException
-	{
-   		public StartingAddressInvalidException()
-        	: base()
-    	{
-    	}
+/// <summary>
+/// Exception to be thrown if Modbus Server returns error code "quantity invalid"
+/// </summary>
+public class QuantityInvalidException : ModbusException
+{
+    public QuantityInvalidException() : base()
+    {
+    }
 
-    	public StartingAddressInvalidException(string message)
-      	  : base(message)
-    	{
-    	}
+    public QuantityInvalidException(string? message) : base(message)
+    {
+    }
 
-    	public StartingAddressInvalidException(string message, Exception innerException)
-        	: base(message, innerException)
-    	{
-    	}
+    public QuantityInvalidException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
 
-    	protected StartingAddressInvalidException(SerializationInfo info, StreamingContext context)
-        	: base(info, context)
-   	 	{
-   	 	}
-	}
-	
-	/// <summary>
-	/// Exception to be thrown if Modbus Server returns error code "Function Code not executed (0x04)"
-	/// </summary>
-	public class ModbusException : Exception
-	{
-   		public ModbusException()
-        	: base()
-    	{
-    	}
+    [Obsolete("Formatter-based exception serialization is obsolete.", DiagnosticId = "SYSLIB0051")]
+    protected QuantityInvalidException(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
+}
 
-    	public ModbusException(string message)
-      	  : base(message)
-    	{
-    	}
+/// <summary>
+/// Exception to be thrown if Modbus Server returns error code "starting adddress and quantity invalid"
+/// </summary>
+public class StartingAddressInvalidException : ModbusException
+{
+    public StartingAddressInvalidException() : base()
+    {
+    }
 
-    	public ModbusException(string message, Exception innerException)
-        	: base(message, innerException)
-    	{
-    	}
+    public StartingAddressInvalidException(string? message) : base(message)
+    {
+    }
 
-    	protected ModbusException(SerializationInfo info, StreamingContext context)
-        	: base(info, context)
-   	 	{
-   	 	}
-	}
-	
-	/// <summary>
-	/// Exception to be thrown if CRC Check failed
-	/// </summary>
-	public class CRCCheckFailedException : ModbusException
-	{
-   		public CRCCheckFailedException()
-        	: base()
-    	{
-    	}
+    public StartingAddressInvalidException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
 
-    	public CRCCheckFailedException(string message)
-      	  : base(message)
-    	{
-    	}
+    [Obsolete("Formatter-based exception serialization is obsolete.", DiagnosticId = "SYSLIB0051")]
+    protected StartingAddressInvalidException(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
+}
 
-    	public CRCCheckFailedException(string message, Exception innerException)
-        	: base(message, innerException)
-    	{
-    	}
+/// <summary>
+/// Exception to be thrown if Modbus Server returns error code "Function Code not executed (0x04)"
+/// </summary>
+public class ModbusException : Exception
+{
+    public ModbusException() : base()
+    {
+    }
 
-    	protected CRCCheckFailedException(SerializationInfo info, StreamingContext context)
-        	: base(info, context)
-   	 	{
-   	 	}
-	}
-	
+    public ModbusException(string? message) : base(message)
+    {
+    }
+
+    public ModbusException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
+
+    [Obsolete("Formatter-based exception serialization is obsolete.", DiagnosticId = "SYSLIB0051")]
+    protected ModbusException(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
+}
+
+/// <summary>
+/// Exception to be thrown if CRC Check failed
+/// </summary>
+public class CRCCheckFailedException : ModbusException
+{
+    public CRCCheckFailedException() : base()
+    {
+    }
+
+    public CRCCheckFailedException(string? message) : base(message)
+    {
+    }
+
+    public CRCCheckFailedException(string? message, Exception? innerException) : base(message, innerException)
+    {
+    }
+
+    [Obsolete("Formatter-based exception serialization is obsolete.", DiagnosticId = "SYSLIB0051")]
+    protected CRCCheckFailedException(SerializationInfo info, StreamingContext context) : base(info, context)
+    {
+    }
 }

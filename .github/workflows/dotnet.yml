@@ -1,0 +1,23 @@
+name: .NET 10
+
+on: [push, pull_request]
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-test:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: '10.0.x'
+      - run: dotnet restore EasyModbus.slnx
+      - run: dotnet build EasyModbus.slnx --configuration Release --no-restore
+      - run: dotnet test EasyModbus.slnx --configuration Release --no-build --no-restore --blame-hang-timeout 30s
+      - run: dotnet run --project ConsoleAppStd --configuration Release --no-build
