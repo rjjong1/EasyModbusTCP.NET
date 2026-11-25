@@ -14,8 +14,8 @@ try
 {
     if (server is not null)
     {
-        server.holdingRegisters[1] = 123;
-        server.holdingRegisters[2] = 456;
+        server.HoldingRegisters[1] = 123;
+        server.HoldingRegisters[2] = 456;
         server.Listen();
     }
     var host = args.Length > 0 ? args[0] : "127.0.0.1";
